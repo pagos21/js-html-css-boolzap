@@ -46,18 +46,23 @@ header{
 
 .u_sender{
   background-color: green;
-  width: 10%;
-  height: 15%;
+  min-width: 10%;
+  min-height: 12%;
   border-radius: 15px;
   margin-right: 10%;
   margin-top: 1%;
   margin-bottom: 1%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.u_sender p{
-  margin-left: 10%;
+.u_sender .txt{
+}
+
+.u_sender .sendDate{
+  align-self: flex-end;
 }
 
 .receive{
