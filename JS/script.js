@@ -35,6 +35,9 @@ $(document).ready(function() {
       var value = $(this).val().toLowerCase();
       $(".list .contacts_list").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        console.log($(this).text().toLowerCase().indexOf(value));
+        console.log($(this).text().toLowerCase().indexOf(value) > -1);
+
       });
     });
   }
