@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+img{
+  width: 10%;
+}
+
 header{
   background-color: #ccc;
   position: fixed;
@@ -15,10 +19,20 @@ header{
 .header_bar{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.icon{
+  width: 10%;
+}
+
+.icon img{
+  width: 100%;
 }
 
 .icon_nome{
   display: flex;
+align-items: center;
 }
 
 .icon i {
@@ -37,12 +51,76 @@ header{
 
 .contacts_header{
   position: fixed;
-  display: flex;
   width: 25%;
   z-index: 90;
   height: 100%;
   background: red;
   float: left;
+}
+
+.main_contact{
+  padding: 5px;
+  background: grey;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_contact img{
+  width: 10%;
+}
+.options_contacts{
+  display: flex;
+  text-align: right;
+}
+.options_contacts i{
+  padding: 0 10px;
+}
+
+.notification{
+  height: 60px;
+  background-color: lightblue;
+  width: 100%;
+}
+
+.logo_notification{
+  float: left;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.notification h3{
+  font-size: 16px;
+}
+.notification a{
+  font-size: 12px;
+}
+
+.searchbar{
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.searchContacts{
+  width: 90%;
+  border: 0;
+  padding: 2% 0;
+}
+
+.contacts_list{
+  width: 100%;
+  height: 60px;
+  background-color: #ccc;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
 }
 
 #test{
@@ -51,52 +129,71 @@ header{
   background-size: cover;
   height: 100vh;
   overflow: auto;
+  float: right;
+  width: 75%;
+  padding: 64px 0;
 }
 
 .main{
   width: 100%;
-  padding: 4% 0;
-  display: flex;
+  /* display: flex; */
   /* justify-content: flex-end; */
   flex-direction: column;
   align-items: flex-end;
   float: right;
   overflow-y: auto;
   height: 100%;
-  z-index: 99;
 }
 
 .u_sender{
   background-color: green;
   min-width: 10%;
-  min-height: 12%;
+  min-height: 50px;
+  max-width: 16%;
   border-radius: 15px;
+  padding: 4px;
   margin-right: 10%;
   margin-top: 1%;
   margin-bottom: 1%;
-  display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  flex-wrap: wrap;
   flex-direction: column;
+  /* per non mettere i div sulla stessa lienea */
+  clear: both;
+  float: right;
+  word-wrap: break-word;
 }
 
 .u_sender .txt{
+  padding: 0 5px;
 }
 
 .u_sender .sendDate{
-  align-self: flex-end;
-  margin-right: 2%;
+  padding: 0 5px;
+  font-size: 10px;
+  text-align: right;
 }
 
 .receive{
   background-color: white;
-  width: 10%;
-  height: 15%;
+  min-width: 10%;
+  max-width: 16%;
+  min-height: 50px;
   border-radius: 15px;
-  margin-right: 55%;
-  margin-top: 1%;
+  margin-left: 10%;
+  margin-top: 25px;
   margin-bottom: 1%;
+  float: left;
+}
+
+.receive .txt{
+  padding: 0 5px;
+}
+
+.receive .sendDate{
+  text-align: right;
+  font-size: 10px;
+  padding: 0 5px;
 }
 
 .chat_bar{
