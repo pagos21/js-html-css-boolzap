@@ -184,6 +184,8 @@ align-items: center;
   margin-top: 25px;
   margin-bottom: 1%;
   float: left;
+  clear: both;
+
 }
 
 .receive .txt{
