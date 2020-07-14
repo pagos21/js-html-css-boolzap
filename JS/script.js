@@ -16,7 +16,7 @@ $(document).ready(function() {
       // Inserisco il testo solo all'ultimo div creato lasciando stare quelli precedenti
       $(".u_sender p.txt").last().text(input);
       $(".u_sender p.sendDate").last().text(dateHM);
-
+      // Cancello i valori di input
       $("#inp").val("");
       // Dopo 1 sec eseguo questa funzione
       setTimeout(function(){
@@ -24,16 +24,28 @@ $(document).ready(function() {
       }, 1000);
     }
 
+    // Al click sulla i nel messaggio apro la dropdown
     $(".main .deleteOption i").click(dropDown);
     function dropDown(){
         $(this).next(".dropCont").toggle();
         console.log($(this).children(".dropCont"));
     }
+    // al click su i.red cancello l'intero div
     $(".dropCont li.red").click(function(){
       var toDelete = document.getElementsByClassName("u_sender");
       $(this).parents(".u_sender").remove();
     })
 
+    $(document).mouseup(function (e){
+    var container = $(".dropCont");
+    // console.log(e.target);
+    // console.log(container.has(e.target));
+    // console.log(container.has(e.target).length == 0); Restituisce true se la condizione è falsa
+        // se il target del click non è il container stesso && un discendente del cotainer >> se è VERO che la condizione è falsa esegue il fadeOut
+    if (!container.is(e.target) && container.has(e.target).length == 0){
+      container.fadeOut();
+    }
+    });
   })
   search();
 
@@ -43,7 +55,7 @@ $(document).ready(function() {
 
 
 
-
+// ---Functions Sec---
   function reply(){
     $(".main").append("<div class='receive'> <p class = 'txt'></p> <p class = 'sendDate'></p>  </div>");
     $(".receive p.txt").last().text("Follow the white rabbit!");
@@ -61,7 +73,6 @@ $(document).ready(function() {
       });
     });
   }
-
   function dropDown(){
       $(this).siblings(".dropCont").toggle();
       console.log($(this).children(".dropCont"));
