@@ -8,6 +8,11 @@ img{
   width: 10%;
 }
 
+ul li{
+  list-style: none;
+  cursor: pointer;
+}
+
 header{
   background-color: #ccc;
   position: fixed;
@@ -162,6 +167,39 @@ align-items: center;
   clear: both;
   float: right;
   word-wrap: break-word;
+  position: relative;
+}
+
+.hide{
+  display: none;
+}
+
+.u_sender i{
+  float: right;
+  cursor: pointer;
+}
+
+.dropCont{
+  position: absolute;
+  width: 150px;
+  top:50%;
+  background-color: white;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 8px;
+}
+
+.dropCont li{
+  padding: 2px;
+}
+.red{
+  color: red;
+  font-weight: bold;
+}
+
+
+
+.u_sender:hover, .receive:hover{
+
 }
 
 .u_sender .txt{
@@ -210,6 +248,7 @@ align-items: center;
   justify-content: space-around;
   align-items: center;
 }
+
 .chat_bar i{
   font-size: 25px;
   margin: 0 1%;
