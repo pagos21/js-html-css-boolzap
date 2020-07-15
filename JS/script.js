@@ -7,13 +7,12 @@ $(document).ready(function() {
     var input = $("#inp").val();
     console.log(input);
     if (event.keyCode == 13 && input != "") {
-      // $(".main").append("<div class='u_sender'> <p class = 'txt'></p> <p class = 'sendDate'></p>  </div>");
-      var copyDiv = $(".u_sender").last().clone();
-      $(".main").append(copyDiv);
-      $(".u_sender").last().removeClass("hide");
+      var copyDiv = $(".main.active .u_sender").clone();
+      $(".main.active").last().append(copyDiv);
+      $(".main.active .u_sender").last().removeClass("hide");
       // Inserisco il testo solo all'ultimo div creato lasciando stare quelli precedenti
-      $(".u_sender p.txt").last().text(input);
-      $(".u_sender p.sendDate").last().text(dateHM);
+      $(".main.active .u_sender p.txt").text(input);
+      $(".main.active .u_sender p.sendDate").text(dateHM);
       // Cancello i valori di input
       $("#inp").val("");
       // Dopo 1 sec eseguo questa funzione
@@ -25,10 +24,9 @@ $(document).ready(function() {
 
   // end keyup
   })
-
-
   search();
-  
+  highLightContact();
+
   // Per ricercare elementi nel dom anche dopo averli generati dinamicamente
       $(document).on("click", ".deleteOption i", dropDown);
       // al click su i.red cancello l'intero div
@@ -47,13 +45,12 @@ $(document).ready(function() {
       });
 
 
-
 // ---Functions Sec---
   function reply(){
-    var copyDiv = $(".receive").last().clone();
-    $(".main").append(copyDiv);
-    $(".receive p.txt").last().text("Follow the white rabbit!");
-    $(".receive p.sendDate").last().text(dateHM);
+    var copyDiv = $(".main .receive").last().clone();
+    $(".main.active").last().append(copyDiv);
+    $(".main.active .receive p.txt").last().text("Follow the white rabbit!");
+    $(".main.active .receive p.sendDate").last().text(dateHM);
   }
   function search(){
     $("#searchContacts").on("keyup", function() {
@@ -72,6 +69,27 @@ $(document).ready(function() {
       // console.log("clicked");
       $(this).next(".dropContR").toggle();
   }
+  function highLightContact() {
+    $(".list .contacts_list").click(function(){
+      // variabile per l'id dell'HTML
+      var idTarget = $(this).data("id");
+      console.log(idTarget);
+
+      $("#chat .main.active").removeClass("active");
+      $('#chat .main[data-id="'+idTarget+'"]').addClass("active");
+      $(".list .contacts_list.activebg").removeClass("activebg");
+      $(this).addClass("activebg");
+      switchNameAvatar();
+
+    });
+  }
+  function switchNameAvatar(){
+    var nameTarget = $(".list .contacts_list.activebg p").text();
+    var avaterTarget = $(".list .contacts_list.activebg img").attr("src");
+    $(".icon_nome .nome p:first").text(nameTarget);
+    $(".icon_nome .icon img").attr("src", avaterTarget);
+  }
+
 
 
 })

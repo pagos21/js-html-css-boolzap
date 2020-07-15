@@ -54,25 +54,25 @@
           <input id="searchContacts" class="searchContacts" type="text" placeholder="Cerca" name="" value="">
         </div>
         <div class="list">
-          <div class="contacts_list">
+          <div class="contacts_list activebg" data-id="neo">
             <img src="img/neo.png" alt="">
             <p>Neo</p>
           </div>
-          <div class="contacts_list">
-            <img src="img/morpheus.png" alt="">
+          <div class="contacts_list" data-id="morpheus">
+            <img src="img/morpheus.png" alt="" >
             <p>Morpheus</p>
           </div>
 
-          <div class="contacts_list">
+          <div class="contacts_list" data-id="trinity">
             <img src="img/trinity.png" alt="">
             <p>Trinity</p>
           </div>
 
-          <div class="contacts_list">
+          <div class="contacts_list" data-id="niobe">
             <img src="img/miope.png" alt="">
             <p>Niobe</p>
           </div>
-          <div class="contacts_list">
+          <div class="contacts_list" data-id="smith">
             <img src="img/smith.png" alt="">
             <p>Agt. Smith</p>
           </div>
@@ -82,8 +82,10 @@
       </div>
     </section>
 
-    <section id="test">
-      <div class="main">
+    <section id="chat">
+
+      <div class="main active" data-id="neo">
+        <!-- Template -->
         <div class="u_sender hide">
           <div class="deleteOption">
             <i class="fas fa-chevron-down"></i>
@@ -98,7 +100,7 @@
           <p class="sendDate"></p>
         </div>
 
-        <div class="receive" data-id="morpheus">
+        <div class="receive">
           <div class="deleteOption">
             <i class="fas fa-chevron-down"></i>
             <div class="dropCont hide">
@@ -108,9 +110,81 @@
               </ul>
             </div>
           </div>
-          <p class="txt">Are you wake?</p>
+          <p class="txt">There is some finction in your truth,<br>and some truth in your fiction.</p>
           <p class="sendDate">14:08</p>
         </div>
+      </div>
+
+      <div class="main" data-id="morpheus">
+        <!-- Template -->
+        <div class="u_sender hide">
+          <div class="deleteOption">
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropCont hide">
+              <ul>
+                <li>Info</li>
+                <li class="red">Delete message!</li>
+              </ul>
+            </div>
+          </div>
+          <p class="txt"></p>
+          <p class="sendDate"></p>
+        </div>
+
+
+      </div>
+      <div class="main" data-id="trinity">
+        <!-- Template -->
+        <div class="u_sender hide">
+          <div class="deleteOption">
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropCont hide">
+              <ul>
+                <li>Info</li>
+                <li class="red">Delete message!</li>
+              </ul>
+            </div>
+          </div>
+          <p class="txt"></p>
+          <p class="sendDate"></p>
+        </div>
+
+
+      </div>
+      <div class="main" data-id="niobe">
+        <!-- Template -->
+        <div class="u_sender hide">
+          <div class="deleteOption">
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropCont hide">
+              <ul>
+                <li>Info</li>
+                <li class="red">Delete message!</li>
+              </ul>
+            </div>
+          </div>
+          <p class="txt"></p>
+          <p class="sendDate"></p>
+        </div>
+
+
+      </div>
+      <div class="main" data-id="smith">
+        <!-- Template -->
+        <div class="u_sender hide">
+          <div class="deleteOption">
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropCont hide">
+              <ul>
+                <li>Info</li>
+                <li class="red">Delete message!</li>
+              </ul>
+            </div>
+          </div>
+          <p class="txt"></p>
+          <p class="sendDate"></p>
+        </div>
+
 
       </div>
     </section>
