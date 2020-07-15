@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-// <div class='deleteOption'> <i class='fas fa-chevron-down'></i> <div class='dropCont'> <ul> <li>Info</li>
-
   var date = new Date();
   var dateHM = date.toLocaleTimeString();
 
@@ -11,7 +9,7 @@ $(document).ready(function() {
     if (event.keyCode == 13 && input != "") {
       // $(".main").append("<div class='u_sender'> <p class = 'txt'></p> <p class = 'sendDate'></p>  </div>");
       var copyDiv = $(".u_sender").last().clone();
-      $(".main").last().append(copyDiv);
+      $(".main").append(copyDiv);
       $(".u_sender").last().removeClass("hide");
       // Inserisco il testo solo all'ultimo div creato lasciando stare quelli precedenti
       $(".u_sender p.txt").last().text(input);
@@ -22,42 +20,38 @@ $(document).ready(function() {
       setTimeout(function(){
         reply();
       }, 1000);
+    // end IF
     }
 
-    // Al click sulla i nel messaggio apro la dropdown
-    $(".main .deleteOption i").click(dropDown);
-    function dropDown(){
-        $(this).next(".dropCont").toggle();
-        console.log($(this).children(".dropCont"));
-    }
-    // al click su i.red cancello l'intero div
-    $(".dropCont li.red").click(function(){
-      var toDelete = document.getElementsByClassName("u_sender");
-      $(this).parents(".u_sender").remove();
-    })
-
-    $(document).mouseup(function (e){
-    var container = $(".dropCont");
-    // console.log(e.target);
-    // console.log(container.has(e.target));
-    // console.log(container.has(e.target).length == 0); Restituisce true se la condizione è falsa
-        // se il target del click non è il container stesso && un discendente del cotainer >> se è VERO che la condizione è falsa esegue il fadeOut
-    if (!container.is(e.target) && container.has(e.target).length == 0){
-      container.fadeOut();
-    }
-    });
+  // end keyup
   })
+
+
   search();
-
-
-
-
+  
+  // Per ricercare elementi nel dom anche dopo averli generati dinamicamente
+      $(document).on("click", ".deleteOption i", dropDown);
+      // al click su i.red cancello l'intero div
+      $(document).on("click", "li.red", function(){
+        $(this).parents(".u_sender, .receive").remove();
+      })
+      $(document).mouseup(function (e){
+      var container = $(".dropCont, .dropContR");
+      // console.log(e.target);
+      // console.log(container.has(e.target));
+      // console.log(container.has(e.target).length == 0); Restituisce true se la condizione è falsa
+          // se il target del click non è il container stesso && un discendente del cotainer >> se è VERO che la condizione è falsa esegue il fadeOut
+      if (!container.is(e.target) && container.has(e.target).length == 0){
+        container.fadeOut();
+      }
+      });
 
 
 
 // ---Functions Sec---
   function reply(){
-    $(".main").append("<div class='receive'> <p class = 'txt'></p> <p class = 'sendDate'></p>  </div>");
+    var copyDiv = $(".receive").last().clone();
+    $(".main").append(copyDiv);
     $(".receive p.txt").last().text("Follow the white rabbit!");
     $(".receive p.sendDate").last().text(dateHM);
   }
@@ -74,8 +68,9 @@ $(document).ready(function() {
     });
   }
   function dropDown(){
-      $(this).siblings(".dropCont").toggle();
-      console.log($(this).children(".dropCont"));
+      $(this).next(".dropCont").toggle();
+      // console.log("clicked");
+      $(this).next(".dropContR").toggle();
   }
 
 
