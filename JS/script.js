@@ -48,10 +48,17 @@ $(document).ready(function() {
 // ---Functions Sec---
   function reply(){
     var copyDiv = $(".main .receive").last().clone();
-    $(".main.active").last().append(copyDiv);
-    $(".main.active .receive p.txt").last().text("Follow the white rabbit!");
-    $(".main.active .receive p.sendDate").last().text(dateHM);
+    if ($(".main.active").data("id") == "smith") {
+      $(".main.active").last().append(copyDiv);
+      $(".main.active .receive p.txt").last().text("It's inevitable!");
+      $(".main.active .receive p.sendDate").last().text(dateHM);
+    }
+    else{
+        $(".main.active").last().append(copyDiv);
+        $(".main.active .receive p.txt").last().text("Follow the white rabbit!");
+        $(".main.active .receive p.sendDate").last().text(dateHM);}
   }
+
   function search(){
     $("#searchContacts").on("keyup", function() {
       var value = $(this).val().toLowerCase();
