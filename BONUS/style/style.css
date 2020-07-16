@@ -1,0 +1,351 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  width: 10%;
+}
+
+ul li{
+  list-style: none;
+  cursor: pointer;
+}
+
+header{
+  background-color: #ccc;
+  position: fixed;
+  z-index: 91;
+  width: 75%;
+  left: 25%;
+  float: right;
+}
+.header_bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.icon{
+  width: 10%;
+}
+
+.icon img{
+  width: 100%;
+}
+
+.icon_nome{
+  display: flex;
+align-items: center;
+}
+
+.icon i {
+  font-size: 50px;
+  margin: 0 10px;
+}
+
+.small{
+  font-size: 11px;
+}
+
+.options{
+  font-size: 25px;
+  margin-right: 1%;
+}
+
+.contacts_header{
+  position: fixed;
+  width: 25%;
+  z-index: 90;
+  height: 100%;
+  background: red;
+  float: left;
+}
+
+.main_contact{
+  padding: 5px;
+  background: grey;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_contact img{
+  width: 10%;
+}
+.options_contacts{
+  display: flex;
+  text-align: right;
+}
+.options_contacts i{
+  padding: 0 10px;
+}
+
+.notification{
+  height: 60px;
+  background-color: lightblue;
+  width: 100%;
+}
+
+.logo_notification{
+  float: left;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.notification h3{
+  font-size: 16px;
+}
+.notification a{
+  font-size: 12px;
+}
+
+.searchbar{
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.searchContacts{
+  width: 90%;
+  border: 0;
+  padding: 2% 0;
+}
+
+.contacts_list{
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  background-color: #ccc;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+#chat{
+  background-image: url(../img/whatsapp.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: auto;
+  float: right;
+  width: 75%;
+  padding: 64px 0;
+}
+
+.main{
+  display: none;
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  flex-direction: column;
+  align-items: flex-end;
+  float: right;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.active{
+  display: block;
+}
+
+.activebg{
+  background-color: lightgreen;
+}
+
+.hide{
+  display: none;
+}
+
+
+.u_sender{
+  background-color: green;
+  min-width: 10%;
+  min-height: 50px;
+  max-width: 16%;
+  border-radius: 15px;
+  padding: 4px;
+  margin-right: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  /* per non mettere i div sulla stessa lienea */
+  clear: both;
+  float: right;
+  word-wrap: break-word;
+  position: relative;
+}
+
+
+.u_sender i, .receive i{
+  float: right;
+  cursor: pointer;
+}
+
+.dropCont{
+  position: absolute;
+  width: 150px;
+  top:22px;
+  right: 0;
+  background-color: white;
+  box-shadow: 5px 10px 18px #888888;
+  border-radius: 8px;
+}
+
+
+.dropCont li, .dropContR li{
+  padding: 2px;
+}
+.red{
+  color: red;
+  font-weight: bold;
+}
+
+
+
+.u_sender:hover, .receive:hover{
+
+}
+
+.u_sender .txt{
+  padding: 0 5px;
+}
+
+.u_sender .sendDate{
+  padding: 0 5px;
+  font-size: 10px;
+  text-align: right;
+}
+
+.receive{
+  position: relative;
+  background-color: white;
+  min-width: 10%;
+  max-width: 16%;
+  min-height: 50px;
+  border-radius: 15px;
+  margin-left: 10%;
+  margin-top: 25px;
+  margin-bottom: 1%;
+  padding: 4px;
+  float: left;
+  clear: both;
+}
+
+.receive .txt{
+  padding: 0 5px;
+}
+
+.receive .sendDate{
+  text-align: right;
+  font-size: 10px;
+  padding: 0 5px;
+}
+
+.chat_bar{
+  position: fixed;
+  bottom: 0;
+  width: 75%;
+  left: 25%;
+  background: grey;
+  height: 50px;
+  z-index: 99;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chat_bar i{
+  font-size: 25px;
+  margin: 0 1%;
+}
+
+.inp{
+  width: 90%;
+  border-radius: 10px;
+  height: 40px;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto 50%;
+  padding: 0;
+  border: 1px solid #888;
+  width: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 15px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: red;;
+  color: white;
+  border-radius: 15px 15px 0px 0px;
+
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
