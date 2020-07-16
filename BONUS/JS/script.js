@@ -104,7 +104,6 @@ $(document).ready(function() {
   function modal(){
     // Get the modal
 var modal = $("#myModal");
- // document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = $(this);
@@ -125,10 +124,6 @@ span.click(function(){
 // When the user clicks anywhere outside of the modal, close it
 $(document).mouseup(function (e){
 var container = $(".modal-content");
-// console.log(e.target);
-// console.log(container.has(e.target));
-// console.log(container.has(e.target).length == 0); Restituisce true se la condizione è falsa
-    // se il target del click non è il container stesso && un discendente del cotainer >> se è VERO che la condizione è falsa esegue il fadeOut
 if (!container.is(e.target) && container.has(e.target).length == 0){
   modal.fadeOut("slow");
 }
